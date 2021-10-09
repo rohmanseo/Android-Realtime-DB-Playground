@@ -1,0 +1,9 @@
+mongod --dbpath "C:\mongodb\primary\data" --logpath "C:\mongodb\primary\log\primary.log" --port 27017 --storageEngine=wiredTiger --journal --replSet mongoset
+mongo --port 27017
+rsconf={_id:"mongoset",members:[{_id:0,host:"localhost:27017"}]}
+rs.initiate(rsconf)
+
+
+// after secondary server configured, run the following code below
+
+rs.add("localhost:27018")

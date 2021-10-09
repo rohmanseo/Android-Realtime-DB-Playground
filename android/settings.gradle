@@ -1,0 +1,15 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        google()
+        mavenCentral()
+        repositories {
+            maven { url "https://oss.jfrog.org/libs-snapshot" }
+        }
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "RealtimeDB"
+include ':app'

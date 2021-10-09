@@ -1,0 +1,7 @@
+mongod --dbpath "C:\mongodb\secondary\data" --logpath "C:\mongodb\secondary\log\secondary.log" --port 27018 --storageEngine=wiredTiger --journal --replSet mongoset
+mongo --port 27018
+
+// after this secondary server successfully added to the primary server, then run the following code below:
+
+rs.secondaryOk()
+rs.status()
